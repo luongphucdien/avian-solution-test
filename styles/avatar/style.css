@@ -1,0 +1,3 @@
+.component-avatar {
+    @apply inline-flex h-[33.31px] w-[33.31px] select-none items-center justify-center overflow-hidden rounded-[8.33px] bg-[var(--color-idle)] align-middle;
+}

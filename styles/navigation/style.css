@@ -1,0 +1,11 @@
+.component-navigation {
+    @apply flex flex-col gap-[26.64px] text-[11.66px] font-normal leading-[17.49px] text-[var(--color-idle)];
+
+    & > a {
+        @apply flex items-center gap-4;
+
+        & > span:first-child {
+            @apply w-[19.98px] h-[19.98px]
+        }
+    }
+}

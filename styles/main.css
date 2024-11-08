@@ -1,3 +1,22 @@
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap);
+
+@import "./icon/style.css";
+@import "./navigation/style.css";
+@import "./avatar/style.css";
+@import "./text-field/style.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+    --color-surface: #282c35;
+    --color-container: #1a1c22;
+    --color-primary: #1fcb4f;
+    --color-idle: #a9a9a9;
+}
+
+body {
+    font-family: Poppins, Arial, Helvetica, sans-serif;
+    color: white;
+}
