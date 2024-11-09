@@ -4,6 +4,7 @@
 @import "./navigation/style.css";
 @import "./avatar/style.css";
 @import "./text-field/style.css";
+@import "./value-card/style.css";
 
 @tailwind base;
 @tailwind components;

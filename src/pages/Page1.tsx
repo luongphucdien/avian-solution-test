@@ -1,20 +1,33 @@
-import AnalyticsIcon from "../assets/svg/analytics-icon.svg?react"
-import DashboardIcon from "../assets/svg/dashboard-icon.svg?react"
-import LogoText from "../assets/svg/logo-text.svg?react"
-import Logo from "../assets/svg/logo.svg?react"
-import MessageIcon from "../assets/svg/message-icon.svg?react"
-import NotificationIcon from "../assets/svg/notification-icon.svg?react"
-import PersonalIcon from "../assets/svg/personal-icon.svg?react"
-import SearchIcon from "../assets/svg/search-icon.svg?react"
-import SettingIcon from "../assets/svg/setting-icon.svg?react"
-import TransactionIcon from "../assets/svg/transactions-icon.svg?react"
-import WalletIcon from "../assets/svg/wallet-icon.svg?react"
+import { useState } from "react"
+
+import {
+    AnalyticsIcon,
+    BalanceIcon,
+    DashboardIcon,
+    ExpensesIcon,
+    IncomeIcon,
+    Logo,
+    LogoText,
+    MessageIcon,
+    NewIndicator,
+    NotificationIcon,
+    PersonalIcon,
+    SavingsIcon,
+    SearchIcon,
+    SettingIcon,
+    TransactionIcon,
+    WalletIcon,
+} from "../assets/svg"
 import { Avatar } from "../components/avatar"
+import { ValueCard } from "../components/card"
 import { Icon } from "../components/icon"
 import { Navigation, NavigationItem } from "../components/navigation"
 import { TextField } from "../components/text-field"
 
 export const Page1 = () => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const [hasNewNoti, setHasNewNoti] = useState(true)
+
     const navItems: NavigationItem[] = [
         {
             icon: <DashboardIcon />,
@@ -89,16 +102,53 @@ export const Page1 = () => {
 
                         <Icon
                             label="Notification icon"
-                            className="ml-[23.31px] mr-[19.98px]"
+                            className="relative ml-[23.31px] mr-[19.98px]"
                         >
+                            {hasNewNoti && (
+                                <NewIndicator className="absolute" />
+                            )}
                             <NotificationIcon />
                         </Icon>
 
                         <Avatar>
-                            <Avatar.Image />
-                            <Avatar.Fallback>user</Avatar.Fallback>
+                            <Avatar.Image src="https://s3-alpha-sig.figma.com/img/05ee/48aa/de7b6e9524212508334e50ea61c70030?Expires=1731888000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=jrDAl9eS3ibZiXHCUWqeLtv-NWZVXizz8kIVdoaGEHad0GsV0eZ57D9vZxt9L8YwXLihgsUssDLxRVPTB55H9FWJDx-8UoeRgY59LXPxm5dUndgar-Q6WSlJGWI0BKWxHvL94jXNnjOLGKfTg8y~8FDZoUobkviQ~hIROpPTq~WIa~MJ8J2H7jhO09amkxVze4Z2ey4JhIP636tjsdszMLlt9TrOrKuVCe8O8pH96iZGtdl~pw6nfaId5dbHUJy24SPtrBeGjYkLXgkh6fWd1TQhpaUKuNdz9iVkTnv7K3aKMGn83EKChy0LdU-ldsv2xHRxRL7ALtS5Pra7yKkQAg__" />
+                            <Avatar.Fallback>U</Avatar.Fallback>
                         </Avatar>
                     </div>
+                </div>
+
+                <div className="grid grid-cols-4 gap-[24.98px] py-[33.31px] pl-[24.98px] pr-[26.64px]">
+                    <ValueCard>
+                        <ValueCard.Title>Balance</ValueCard.Title>
+                        <ValueCard.Value>41210</ValueCard.Value>
+                        <ValueCard.Icon>
+                            <BalanceIcon />
+                        </ValueCard.Icon>
+                    </ValueCard>
+
+                    <ValueCard>
+                        <ValueCard.Title>Income</ValueCard.Title>
+                        <ValueCard.Value>41210</ValueCard.Value>
+                        <ValueCard.Icon>
+                            <IncomeIcon />
+                        </ValueCard.Icon>
+                    </ValueCard>
+
+                    <ValueCard>
+                        <ValueCard.Title>Expenses</ValueCard.Title>
+                        <ValueCard.Value>41210</ValueCard.Value>
+                        <ValueCard.Icon>
+                            <ExpensesIcon />
+                        </ValueCard.Icon>
+                    </ValueCard>
+
+                    <ValueCard>
+                        <ValueCard.Title>Savings</ValueCard.Title>
+                        <ValueCard.Value>41210</ValueCard.Value>
+                        <ValueCard.Icon>
+                            <SavingsIcon />
+                        </ValueCard.Icon>
+                    </ValueCard>
                 </div>
             </div>
         </div>

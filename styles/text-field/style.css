@@ -2,21 +2,25 @@
     --component-textfield-color-bg: #282c35;
     --component-textfield-color-text: #9e9e9e;
 
-    @apply flex h-[33.31px] w-[214.82px] items-center rounded-[6.66px] bg-[var(--component-textfield-color-bg)] pl-[12.49px] text-[9.99px];
-
-    &-input::placeholder {
-        @apply text-[9.99px] font-normal text-[var(--component-textfield-color-text)];
-    }
+    @apply flex h-[33.31px] w-[214.82px] items-center rounded-[6.66px] bg-[var(--component-textfield-color-bg)] text-[9.99px];
 
     &-input {
-        @apply h-[33.31px] bg-transparent;
+        &::placeholder {
+            @apply text-[9.99px] font-normal text-[var(--component-textfield-color-text)];
+        }
+
+        &:focus-visible {
+            @apply outline-none;
+        }
+
+        @apply h-[33.31px] w-0 grow bg-transparent pl-[12.49px];
     }
 
     &-icon {
-        @apply grid h-[14.99px] w-[14.99px];
+        @apply flex h-full shrink-0 items-center px-[12.49px] cursor-text;
 
         & > svg {
-            @apply place-self-center;
+            @apply h-[14.99px] w-[14.99px];
         }
     }
 }

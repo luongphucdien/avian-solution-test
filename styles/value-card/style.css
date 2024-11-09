@@ -1,0 +1,25 @@
+.component-valuecard {
+    --component-valuecard-color-title: #9e9e9e;
+
+    @apply flex h-[95.75px] items-center gap-[29.98px] rounded-[8.33px] bg-[var(--color-container)] px-[16.65px];
+
+    &-icon {
+        @apply grid h-[39.97px] w-[39.97px] rounded-[8.33px] bg-[var(--color-surface)];
+
+        & > svg {
+            @apply h-[19.98px] w-[19.98px] place-self-center;
+        }
+    }
+
+    &-info {
+        @apply flex flex-col gap-[6.15px];
+    }
+
+    &-title {
+        @apply text-[11.66px] leading-[17.49px] text-[var(--component-valuecard-color-title)];
+    }
+
+    &-value {
+        @apply text-[26.64px] font-medium leading-[39.97px];
+    }
+}
