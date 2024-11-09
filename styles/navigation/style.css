@@ -7,7 +7,7 @@
         @apply relative flex items-center gap-4 pl-[33.31px] pr-[41.63px];
 
         &[data-selected="true"] {
-            @apply text-[var(--color-primary)];
+            @apply text-[var(--color-primary)] font-semibold;
 
             &::after {
                 content: "";
