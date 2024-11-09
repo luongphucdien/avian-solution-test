@@ -1,11 +1,26 @@
 .component-navigation {
+    --component-navigation-indicator: #ffc01e;
+
     @apply flex flex-col gap-[26.64px] text-[11.66px] font-normal leading-[17.49px] text-[var(--color-idle)];
 
-    & > a {
-        @apply flex items-center gap-4;
+    &-item {
+        @apply relative flex items-center gap-4 pl-[33.31px] pr-[41.63px];
 
-        & > span:first-child {
-            @apply w-[19.98px] h-[19.98px]
+        &[data-selected="true"] {
+            @apply text-[var(--color-primary)];
+
+            &::after {
+                content: "";
+                @apply absolute right-0 h-full w-[6.66px] rounded-s-[4.16px] bg-[var(--component-navigation-indicator)];
+            }
         }
+    }
+
+    &-icon {
+        @apply h-[19.98px] w-[19.98px];
+    }
+
+    &-item[data-selected="true"] > &-icon > svg > * {
+        @apply fill-[var(--color-primary)];
     }
 }

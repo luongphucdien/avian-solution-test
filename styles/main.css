@@ -5,6 +5,7 @@
 @import "./avatar/style.css";
 @import "./text-field/style.css";
 @import "./value-card/style.css";
+@import "./icon-button/style.css";
 
 @tailwind base;
 @tailwind components;

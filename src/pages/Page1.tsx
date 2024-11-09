@@ -1,5 +1,3 @@
-import { useState } from "react"
-
 import {
     AnalyticsIcon,
     BalanceIcon,
@@ -9,7 +7,6 @@ import {
     Logo,
     LogoText,
     MessageIcon,
-    NewIndicator,
     NotificationIcon,
     PersonalIcon,
     SavingsIcon,
@@ -21,54 +18,62 @@ import {
 import { Avatar } from "../components/avatar"
 import { ValueCard } from "../components/card"
 import { Icon } from "../components/icon"
+import { IconButton } from "../components/icon-button"
 import { Navigation, NavigationItem } from "../components/navigation"
 import { TextField } from "../components/text-field"
 
 export const Page1 = () => {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const [hasNewNoti, setHasNewNoti] = useState(true)
-
     const navItems: NavigationItem[] = [
         {
             icon: <DashboardIcon />,
             label: "Dashboard",
+            key: "dashboard",
         },
 
         {
             icon: <TransactionIcon />,
             label: "Transactions",
+            key: "transaction",
         },
 
         {
             icon: <WalletIcon />,
             label: "Wallet",
+            key: "wallet",
         },
 
         {
             icon: <AnalyticsIcon />,
             label: "Analytics",
+            key: "analytics",
         },
 
         {
             icon: <PersonalIcon />,
             label: "Personal",
+            key: "personal",
         },
 
         {
             icon: <MessageIcon />,
             label: "Message",
+            key: "message",
         },
 
         {
             icon: <SettingIcon />,
             label: "Setting",
+            key: "setting",
         },
     ]
 
     return (
         <div className="flex h-[852.62px] w-[1199px] place-self-center overflow-hidden rounded-[15px] bg-[var(--color-surface)]">
             <div className="h-full w-[213.16px] bg-[var(--color-container)]">
-                <a href="#" className="flex items-center px-7 py-[23px]">
+                <a
+                    href="#"
+                    className="flex items-center gap-[5.8px] px-7 py-[23px]"
+                >
                     <Icon label="Avian Solutions logo">
                         <span>
                             <Logo />
@@ -82,8 +87,11 @@ export const Page1 = () => {
                     </Icon>
                 </a>
 
-                <div className="py-[31.24px] pl-[33.31px] pr-[41.63px]">
-                    <Navigation navItems={navItems} />
+                <div className="py-[31.24px]">
+                    <Navigation
+                        navItems={navItems}
+                        defaultSelection="dashboard"
+                    />
                 </div>
             </div>
 
@@ -100,15 +108,13 @@ export const Page1 = () => {
                             icon={<SearchIcon />}
                         />
 
-                        <Icon
-                            label="Notification icon"
-                            className="relative ml-[23.31px] mr-[19.98px]"
+                        <IconButton
+                            label="Notification"
+                            hasIndicator
+                            className="ml-[23.31px] mr-[19.98px]"
                         >
-                            {hasNewNoti && (
-                                <NewIndicator className="absolute" />
-                            )}
                             <NotificationIcon />
-                        </Icon>
+                        </IconButton>
 
                         <Avatar>
                             <Avatar.Image src="https://s3-alpha-sig.figma.com/img/05ee/48aa/de7b6e9524212508334e50ea61c70030?Expires=1731888000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=jrDAl9eS3ibZiXHCUWqeLtv-NWZVXizz8kIVdoaGEHad0GsV0eZ57D9vZxt9L8YwXLihgsUssDLxRVPTB55H9FWJDx-8UoeRgY59LXPxm5dUndgar-Q6WSlJGWI0BKWxHvL94jXNnjOLGKfTg8y~8FDZoUobkviQ~hIROpPTq~WIa~MJ8J2H7jhO09amkxVze4Z2ey4JhIP636tjsdszMLlt9TrOrKuVCe8O8pH96iZGtdl~pw6nfaId5dbHUJy24SPtrBeGjYkLXgkh6fWd1TQhpaUKuNdz9iVkTnv7K3aKMGn83EKChy0LdU-ldsv2xHRxRL7ALtS5Pra7yKkQAg__" />
