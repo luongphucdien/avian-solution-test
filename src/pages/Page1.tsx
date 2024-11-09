@@ -124,37 +124,29 @@ export const Page1 = () => {
                 </div>
 
                 <div className="grid grid-cols-4 gap-[24.98px] py-[33.31px] pl-[24.98px] pr-[26.64px]">
-                    <ValueCard>
-                        <ValueCard.Title>Balance</ValueCard.Title>
-                        <ValueCard.Value>41210</ValueCard.Value>
-                        <ValueCard.Icon>
-                            <BalanceIcon />
-                        </ValueCard.Icon>
-                    </ValueCard>
+                    <ValueCard
+                        icon={<BalanceIcon />}
+                        title="Balance"
+                        value={41210}
+                    />
 
-                    <ValueCard>
-                        <ValueCard.Title>Income</ValueCard.Title>
-                        <ValueCard.Value>41210</ValueCard.Value>
-                        <ValueCard.Icon>
-                            <IncomeIcon />
-                        </ValueCard.Icon>
-                    </ValueCard>
+                    <ValueCard
+                        icon={<IncomeIcon />}
+                        title="Income"
+                        value={41210}
+                    />
 
-                    <ValueCard>
-                        <ValueCard.Title>Expenses</ValueCard.Title>
-                        <ValueCard.Value>41210</ValueCard.Value>
-                        <ValueCard.Icon>
-                            <ExpensesIcon />
-                        </ValueCard.Icon>
-                    </ValueCard>
+                    <ValueCard
+                        icon={<ExpensesIcon />}
+                        title="Expenses"
+                        value={41210}
+                    />
 
-                    <ValueCard>
-                        <ValueCard.Title>Savings</ValueCard.Title>
-                        <ValueCard.Value>41210</ValueCard.Value>
-                        <ValueCard.Icon>
-                            <SavingsIcon />
-                        </ValueCard.Icon>
-                    </ValueCard>
+                    <ValueCard
+                        icon={<SavingsIcon />}
+                        title="Savings"
+                        value={41210}
+                    />
                 </div>
             </div>
         </div>
