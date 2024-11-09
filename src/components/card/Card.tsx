@@ -3,7 +3,7 @@ import {
     HTMLAttributes,
     isValidElement,
     ReactNode,
-    useCallback,
+    useEffect,
     useState,
 } from "react"
 
@@ -27,21 +27,28 @@ export const ValueCard = (props: ValueCardProps) => {
         Value: null,
     })
 
-    const handleOrganizeComponents = useCallback(() => {
+    useEffect(() => {
         Children.forEach(children, (child) => {
             if (isValidElement(child) && typeof child.type === "function") {
                 const name = child.type.name
                 setComponents((c) => ({ ...c, [name]: child }))
+                console.log({ [name]: child })
             }
         })
     }, [])
 
+    // const handleOrganizeComponents = useCallback(() => {
+    //     Children.forEach(children, (child) => {
+    //         if (isValidElement(child) && typeof child.type === "function") {
+    //             const name = child.type.name
+    //             setComponents((c) => ({ ...c, [name]: child }))
+    //             console.log({[name]: child})
+    //         }
+    //     })
+    // }, [])
+
     return (
-        <div
-            {...otherProps}
-            className="component-valuecard"
-            ref={handleOrganizeComponents}
-        >
+        <div {...otherProps} className="component-valuecard">
             {components.Icon}
             <div className="component-valuecard-info">
                 {components.Title}
